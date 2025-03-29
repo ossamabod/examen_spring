@@ -49,7 +49,7 @@ public class SecurityConfig {
         http
             .csrf(csrf -> csrf.disable()) // Disable CSRF for stateless API
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/auth/**").permitAll() // Allow login/register endpoints
+                .requestMatchers("/**").permitAll() // Allow login/register endpoints
                   // Authenticate all other requests
             )
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
